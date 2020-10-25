@@ -4,16 +4,16 @@ currentDay = $("#currentDay")
 
 
 // set timestamps
-var eightTimestamp = $("#eightOclock").text(moment().hour(8).minute(0).format("h:mm A"));
-var nineTimestamp = $("#nineOclock").text(moment().hour(9).minute(0).format("h:mm A"));
-var tenTimestamp = $("#tenOclock").text(moment().hour(10).minute(0).format("h:mm A"));
-var elevenTimestamp = $("#elevenOclock").text(moment().hour(11).minute(0).format("h:mm A"));
-var twelveTimestamp = $("#twelveOclock").text(moment().hour(12).minute(0).format("h:mm A"));
-var oneTimestamp = $("#oneOclock").text(moment().hour(13).minute(0).format("h:mm A"));
-var twoTimestamp = $("#twoOclock").text(moment().hour(14).minute(0).format("h:mm A"));
-var threeTimestamp = $("#threeOclock").text(moment().hour(15).minute(0).format("h:mm A"));
-var fourTimestamp = $("#fourOclock").text(moment().hour(16).minute(0).format("h:mm A"));
-var fiveTimestamp = $("#fiveOclock").text(moment().hour(17).minute(0).format("h:mm A"));
+var eightTimestamp = $("#eightOclock").text(moment().hour(8).minute(0).format("h:mmA"));
+var nineTimestamp = $("#nineOclock").text(moment().hour(9).minute(0).format("h:mmA"));
+var tenTimestamp = $("#tenOclock").text(moment().hour(10).minute(0).format("h:mmA"));
+var elevenTimestamp = $("#elevenOclock").text(moment().hour(11).minute(0).format("h:mmA"));
+var twelveTimestamp = $("#twelveOclock").text(moment().hour(12).minute(0).format("h:mmA"));
+var oneTimestamp = $("#oneOclock").text(moment().hour(13).minute(0).format("h:mmA"));
+var twoTimestamp = $("#twoOclock").text(moment().hour(14).minute(0).format("h:mmA"));
+var threeTimestamp = $("#threeOclock").text(moment().hour(15).minute(0).format("h:mmA"));
+var fourTimestamp = $("#fourOclock").text(moment().hour(16).minute(0).format("h:mmA"));
+var fiveTimestamp = $("#fiveOclock").text(moment().hour(17).minute(0).format("h:mmA"));
 
 
 // when the save buttons are clicked

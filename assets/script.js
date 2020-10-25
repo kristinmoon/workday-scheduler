@@ -46,17 +46,17 @@ var fiveOclock = $("#fiveOclock").text(moment().hour(17).minute(0).format("h:mm 
 
 // loadTasks();
 
-var tasks = []
+var tasks = JSON.parse(localStorage.getItem("todolist")) || [];
 console.log(typeof tasks)
 
 function mySaveEight() {
   var myContentEight = document.getElementById("eight").value;
-  localStorage.setItem("tasks", JSON.stringify(myContentEight));
+  localStorage.setItem("todolist", JSON.stringify(tasks));
   tasks.push("myContentEight")
 }
 function mySaveNine() {
   var myContentNine = document.getElementById("nine").value;
-  localStorage.setItem("tasks", JSON.stringify(myContentNine));
+  localStorage.setItem("todolist", JSON.stringify(tasks));
   tasks.push("myContentNine")
 }
 
@@ -79,7 +79,7 @@ function auditTime() {
     $(".eightOclock").addClass("present");
     $(".eightOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(9).minute(0))) {
+  else if (moment().isAfter(moment().hour(8).minute(59))) {
     $(".eightOclock").addClass("past");
     $(".eightOclock").removeClass("present future")
   }
@@ -92,7 +92,7 @@ function auditTime() {
     $(".nineOclock").addClass("present");
     $(".nineOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(10).minute(0))) {
+  else if (moment().isAfter(moment().hour(9).minute(59))) {
     $(".nineOclock").addClass("past");
     $(".nineOclock").removeClass("present future")
   }
@@ -105,7 +105,7 @@ function auditTime() {
     $(".tenOclock").addClass("present");
     $(".tenOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(11).minute(0))) {
+  else if (moment().isAfter(moment().hour(10).minute(59))) {
     $(".tenOclock").addClass("past");
     $(".tenOclock").removeClass("present future")
   }
@@ -118,7 +118,7 @@ function auditTime() {
     $(".elevenOclock").addClass("present");
     $(".elevenOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(12).minute(0))) {
+  else if (moment().isAfter(moment().hour(11).minute(59))) {
     $(".elevenOclock").addClass("past");
     $(".elevenOclock").removeClass("present future")
   }
@@ -131,7 +131,7 @@ function auditTime() {
     $(".twelveOclock").addClass("present");
     $(".twelveOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(13).minute(0))) {
+  else if (moment().isAfter(moment().hour(12).minute(59))) {
     $(".twelveOclock").addClass("past");
     $(".twelveOclock").removeClass("present future")
   }
@@ -144,7 +144,7 @@ function auditTime() {
     $(".oneOclock").addClass("present");
     $(".oneOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(14).minute(0))) {
+  else if (moment().isAfter(moment().hour(13).minute(59))) {
     $(".oneOclock").addClass("past");
     $(".oneOclock").removeClass("present future")
   }
@@ -157,7 +157,7 @@ function auditTime() {
     $(".twoOclock").addClass("present");
     $(".twoOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(15).minute(0))) {
+  else if (moment().isAfter(moment().hour(14).minute(59))) {
     $(".twoOclock").addClass("past");
     $(".twoOclock").removeClass("present future")
   }
@@ -170,7 +170,7 @@ function auditTime() {
     $(".threeOclock").addClass("present");
     $(".threeOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(16).minute(0))) {
+  else if (moment().isAfter(moment().hour(15).minute(59))) {
     $(".threeOclock").addClass("past");
     $(".threeOclock").removeClass("present future")
   }
@@ -183,7 +183,7 @@ function auditTime() {
     $(".fourOclock").addClass("present");
     $(".fourOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(17).minute(0))) {
+  else if (moment().isAfter(moment().hour(16).minute(59))) {
     $(".fourOclock").addClass("past");
     $(".fourOclock").removeClass("present future")
   }
@@ -196,7 +196,7 @@ function auditTime() {
     $(".fiveOclock").addClass("present");
     $(".fiveOclock").removeClass("past future")
   }
-  else if (moment().isAfter(moment().hour(18).minute(0))) {
+  else if (moment().isAfter(moment().hour(17).minute(59))) {
     $(".fiveOclock").addClass("past");
     $(".fiveOclock").removeClass("present future")
   }

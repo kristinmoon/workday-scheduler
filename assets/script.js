@@ -1,75 +1,107 @@
+// add current date to the header
 currentDay = $("#currentDay")
   .text(moment().format("[Today is] dddd, MMMM Do YYYY"));
-//console.log(currentDay);
 
 
 // set timestamps
-var eightOclock = $("#eightOclock").text(moment().hour(8).minute(0).format("h:mm A"));
-var nineOclock = $("#nineOclock").text(moment().hour(9).minute(0).format("h:mm A"));
-var tenOclock = $("#tenOclock").text(moment().hour(10).minute(0).format("h:mm A"));
-var elevenOclock = $("#elevenOclock").text(moment().hour(11).minute(0).format("h:mm A"));
-var twelveOclock = $("#twelveOclock").text(moment().hour(12).minute(0).format("h:mm A"));
-var oneOclock = $("#oneOclock").text(moment().hour(13).minute(0).format("h:mm A"));
-var twoOclock = $("#twoOclock").text(moment().hour(14).minute(0).format("h:mm A"));
-var threeOclock = $("#threeOclock").text(moment().hour(15).minute(0).format("h:mm A"));
-var fourOclock = $("#fourOclock").text(moment().hour(16).minute(0).format("h:mm A"));
-var fiveOclock = $("#fiveOclock").text(moment().hour(17).minute(0).format("h:mm A"));
+var eightTimestamp = $("#eightOclock").text(moment().hour(8).minute(0).format("h:mm A"));
+var nineTimestamp = $("#nineOclock").text(moment().hour(9).minute(0).format("h:mm A"));
+var tenTimestamp = $("#tenOclock").text(moment().hour(10).minute(0).format("h:mm A"));
+var elevenTimestamp = $("#elevenOclock").text(moment().hour(11).minute(0).format("h:mm A"));
+var twelveTimestamp = $("#twelveOclock").text(moment().hour(12).minute(0).format("h:mm A"));
+var oneTimestamp = $("#oneOclock").text(moment().hour(13).minute(0).format("h:mm A"));
+var twoTimestamp = $("#twoOclock").text(moment().hour(14).minute(0).format("h:mm A"));
+var threeTimestamp = $("#threeOclock").text(moment().hour(15).minute(0).format("h:mm A"));
+var fourTimestamp = $("#fourOclock").text(moment().hour(16).minute(0).format("h:mm A"));
+var fiveTimestamp = $("#fiveOclock").text(moment().hour(17).minute(0).format("h:mm A"));
 
 
-// var saveTasks = function () {
-//   localStorage.setItem("tasks", JSON.stringify(tasks));
-// };
-
-// // save button was clicked
-// $("#eight .saveBtn").click(function () {
-//   // get form values
-//   var taskText = $(".eightOclock").val();
-//   var taskTime = $("#eightOclock").text();
-
-//   //save in tasks array
-//   tasks.push({
-//     text: taskText,
-//     time: taskTime
-//   });
-
-//   saveTasks();
-//   //}
-// })
-
-// var loadTasks = function () {
-//   tasks = JSON.parse(localStorage.getItem("tasks"));
-
-//   if (!tasks) {
-//     tasks = []
-//   };
-// }
-
-// loadTasks();
-var tasks = []
-//var tasks = JSON.parse(localStorage.getItem("todolist")) || [];
-//console.log(typeof tasks)
-
-function mySaveEight() {
-  var myContentEight = document.getElementById("eight").value;
+// when the save buttons are clicked
+function saveEight() {
+  var myContentEight = $("#eight").val().trim();
   localStorage.setItem("myContentEight", JSON.stringify(myContentEight));
-  //tasks.push("myContentEight", myContentEight)
 };
 
-function mySaveNine() {
-  var myContentNine = document.getElementById("nine").value;
+function saveNine() {
+  var myContentNine = $("#nine").val().trim();
   localStorage.setItem("myContentNine", JSON.stringify(myContentNine));
-  //tasks.push("myContentNine", myContentNine)
-}
+};
 
-function myLoad() {
+function saveTen() {
+  var myContentTen = $("#ten").val().trim();
+  localStorage.setItem("myContentTen", JSON.stringify(myContentTen));
+};
+
+function saveEleven() {
+  var myContentEleven = $("#eleven").val().trim();
+  localStorage.setItem("myContentEleven", JSON.stringify(myContentEleven));
+};
+
+function saveTwelve() {
+  var myContentTwelve = $("#twelve").val().trim();
+  localStorage.setItem("myContentTwelve", JSON.stringify(myContentTwelve));
+};
+
+function saveOne() {
+  var myContentOne = $("#one").val().trim();
+  localStorage.setItem("myContentOne", JSON.stringify(myContentOne));
+};
+
+function saveTwo() {
+  var myContentTwo = $("#two").val().trim();
+  localStorage.setItem("myContentTwo", JSON.stringify(myContentTwo));
+};
+
+function saveThree() {
+  var myContentThree = $("#three").val().trim();
+  localStorage.setItem("myContentThree", JSON.stringify(myContentThree));
+};
+
+function saveFour() {
+  var myContentFour = $("#four").val().trim();
+  localStorage.setItem("myContentFour", JSON.stringify(myContentFour));
+};
+
+function saveFive() {
+  var myContentFive = $("#five").val().trim();
+  localStorage.setItem("myContentFive", JSON.stringify(myContentFive));
+};
+
+// loadTasks on refresh
+function loadTasks() {
   var myContentEight = JSON.parse(localStorage.getItem("myContentEight"));
   document.getElementById("eight").value = myContentEight;
 
-  var myContentNine = localStorage.getItem("tasks");
+  var myContentNine = JSON.parse(localStorage.getItem("myContentNine"));
   document.getElementById("nine").value = myContentNine;
+
+  var myContentTen = JSON.parse(localStorage.getItem("myContentTen"));
+  document.getElementById("ten").value = myContentTen;
+
+  var myContentEleven = JSON.parse(localStorage.getItem("myContentEleven"));
+  document.getElementById("eleven").value = myContentEleven;
+
+  var myContentTwelve = JSON.parse(localStorage.getItem("myContentTwelve"));
+  document.getElementById("twelve").value = myContentTwelve;
+
+  var myContentOne = JSON.parse(localStorage.getItem("myContentOne"));
+  document.getElementById("one").value = myContentOne;
+
+  var myContentTwo = JSON.parse(localStorage.getItem("myContentTwo"));
+  document.getElementById("two").value = myContentTwo;
+
+  var myContentThree = JSON.parse(localStorage.getItem("myContentThree"));
+  document.getElementById("three").value = myContentThree;
+
+  var myContentFour = JSON.parse(localStorage.getItem("myContentFour"));
+  document.getElementById("four").value = myContentFour;
+
+  var myContentFive = JSON.parse(localStorage.getItem("myContentFive"));
+  document.getElementById("five").value = myContentFive;
+
 }
 
-myLoad();
+loadTasks();
 
 
 // highlight textarea depending on time of day
@@ -208,5 +240,6 @@ function auditTime() {
 }
 auditTime();
 
-var checkTime = setInterval(auditTime, 10_000);
+// auditTime every 1 minute
+var checkTime = setInterval(auditTime, 60_000);
 

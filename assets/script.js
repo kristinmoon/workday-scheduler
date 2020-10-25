@@ -45,23 +45,24 @@ var fiveOclock = $("#fiveOclock").text(moment().hour(17).minute(0).format("h:mm 
 // }
 
 // loadTasks();
-
-var tasks = JSON.parse(localStorage.getItem("todolist")) || [];
-console.log(typeof tasks)
+var tasks = []
+//var tasks = JSON.parse(localStorage.getItem("todolist")) || [];
+//console.log(typeof tasks)
 
 function mySaveEight() {
   var myContentEight = document.getElementById("eight").value;
-  localStorage.setItem("todolist", JSON.stringify(tasks));
-  tasks.push("myContentEight")
-}
+  localStorage.setItem("myContentEight", JSON.stringify(myContentEight));
+  //tasks.push("myContentEight", myContentEight)
+};
+
 function mySaveNine() {
   var myContentNine = document.getElementById("nine").value;
-  localStorage.setItem("todolist", JSON.stringify(tasks));
-  tasks.push("myContentNine")
+  localStorage.setItem("myContentNine", JSON.stringify(myContentNine));
+  //tasks.push("myContentNine", myContentNine)
 }
 
 function myLoad() {
-  var myContentEight = localStorage.getItem("tasks");
+  var myContentEight = JSON.parse(localStorage.getItem("myContentEight"));
   document.getElementById("eight").value = myContentEight;
 
   var myContentNine = localStorage.getItem("tasks");
@@ -207,5 +208,5 @@ function auditTime() {
 }
 auditTime();
 
-var checkTime = setInterval(auditTime, 1_800_000);
+var checkTime = setInterval(auditTime, 10_000);
 
